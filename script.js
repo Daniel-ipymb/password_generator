@@ -1,10 +1,10 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-var genNumber = ['0123456789'.split('')]
-var genUpperCase = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')]
-var genLowerCase = ['abcdefghijklmnopqrstuvwxyz'.split('')]
-var genSymbols = [" !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~ ".split("")]
+var genNumber = "0123456789".split("")
+var genUpperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
+var genLowerCase = "abcdefghijklmnopqrstuvwxyz".split("")
+var genSymbols = " !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~ ".split("")
 var passcode = []
 var finalPasscode = []
 
@@ -39,13 +39,15 @@ function generatePassword() {
   console.log(passcode)
 
 
-  for (i=0; i<userInputs.length;i++) {
+  for (i = 0 ; i < userInputs.characterlength; i++) {
     
-    var randIndex = Math.floor(Math.random() * password.length);
+    var randIndex = Math.floor(Math.random() * passcode.length);
     var randElement = passcode[randIndex]
     finalPasscode.push(randElement)
+    console.log(finalPasscode)
   }
   
+  return finalPasscode.join("")  
   
   // userChoice = Math.floor(Math.random()*userInputs.characterlength.length)
   // console.log(userChoice)
