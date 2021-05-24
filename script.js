@@ -4,13 +4,15 @@ var generateBtn = document.querySelector("#generate");
 var genNumber = "0123456789".split("")
 var genUpperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
 var genLowerCase = "abcdefghijklmnopqrstuvwxyz".split("")
-var genSymbols = " !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~ ".split("")
-var passcode = []
-var finalPasscode = []
+var genSymbols =  "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~".split("")
+
+
 
 function generatePassword() {
+  var finalPasscode = []
+  var passcode = []
   var userInputs = {
-   characterlength: window.prompt("Length of password?"),
+   characterlength: window.prompt("Password length (8~128)?"),
    num: window.confirm("numbers?"),
    upp: window.confirm("Uppercase?"),
    low: window.confirm("Lowercase?"),
@@ -61,4 +63,4 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword);  
