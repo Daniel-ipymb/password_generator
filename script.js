@@ -49,11 +49,6 @@ function generatePassword() {
   
   return finalPasscode.join("")  
   
-  // userChoice = Math.floor(Math.random()*userInputs.characterlength.length)
-  // console.log(userChoice)
-  // var userChoice = {
-    
-  // }
 
 }
 // Write password to the #password input
