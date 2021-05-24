@@ -1,26 +1,57 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-var genNumber = ['0', '1', '2','3','4','5','6','7','8','9']
+var genNumber = ['0123456789'.split('')]
 var genUpperCase = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')]
 var genLowerCase = ['abcdefghijklmnopqrstuvwxyz'.split('')]
 var genSymbols = [" !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~ ".split("")]
-
+var passcode = []
+var finalPasscode = []
 
 function generatePassword() {
   var userInputs = {
    characterlength: window.prompt("Length of password?"),
-   num: window.prompt("numbers?"),
-   upp: window.prompt("Uppercase?"),
-   low: window.prompt("Lowercase?"),
-   symbol: window.prompt("Special Characters?")
+   num: window.confirm("numbers?"),
+   upp: window.confirm("Uppercase?"),
+   low: window.confirm("Lowercase?"),
+   symbol: window.confirm("Special Characters?")
   }
-  if (num) {
+  if (userInputs.characterlength < 8 || userInputs.characterlength >128) {
+    console.log(userInputs.characterlength)
+  return;
+  }
+  if (userInputs.num) {
+    passcode = passcode.concat(genNumber)
+    console.log(userInputs.num)
+  }
+  if (userInputs.upp) {
+    passcode = passcode.concat(genUpperCase)
+    console.log(userInputs.upp)
+  }
+  if (userInputs.low) {
+    passcode = passcode.concat(genLowerCase)
+    console.log(userInputs.low)
+  }
+  if (userInputs.symbol) {
+    passcode = passcode.concat(genSymbols)
+    console.log(userInputs.symbol)
+  }
+  console.log(passcode)
+
+
+  for (i=0; i<userInputs.length;i++) {
     
+    var randIndex = Math.floor(Math.random() * password.length);
+    var randElement = passcode[randIndex]
+    finalPasscode.push(randElement)
   }
-  var userChoice = {
+  
+  
+  // userChoice = Math.floor(Math.random()*userInputs.characterlength.length)
+  // console.log(userChoice)
+  // var userChoice = {
     
-  }
+  // }
 
 }
 // Write password to the #password input
