@@ -7,3 +7,5 @@
  **https://daniel-ipymb.github.io/password_generator/**
 
   The image of the application is also shown below;
+
+  ![Password generator image](image.png)
